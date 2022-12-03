@@ -18,6 +18,15 @@ javac -cp $CPATH *.java
 
 java -cp $CPATH org.junit.runner.JUnitCore TestListExamples > junit-output.txt
 
+
+if [ $? -eq 00 ]
+then
+    echo "Compilation succeeded"
+else
+    echo "Compilation failed"
+    echo 'Score: 1/4'
+fi
+
 # The strategy used here relies on the last few lines of JUnit output, which
 # looks like:
 
